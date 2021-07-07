@@ -1,0 +1,22 @@
+{
+  "name": "printscreen",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.node",
+  "scripts": {
+    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
+    "install": "npm run build",
+    "test": "cargo test",
+    "start": "npm run build && node index.js",
+    "test:e2e": "npm run build"
+  },
+  "author": "loribao sanjinez",
+  "license": "ISC",
+  "devDependencies": {
+    "cargo-cp-artifact": "^0.1"
+  },
+  "dependencies": {
+    "image-charts": "^5.6.17",
+    "terminal-image": "^2.0.0"
+  }
+}

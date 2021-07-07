@@ -1,0 +1,28 @@
+[package]
+name = "printscreen"
+version = "0.1.0"
+authors = ["loribao sanjinez"]
+license = "ISC"
+edition = "2018"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies.neon]
+version = "0.8"
+default-features = false
+features = ["napi-6"]
+
+[dependencies]
+captrs = "0.3.1"
+image = "0.23.14"
+scrap = "0.5"
+repng = "0.2"
+dxgcap = "0.2.4"
+
+[target.'cfg(not(windows))'.dependencies]
+x11cap = "0.4.1"
+
+[target.'cfg(windows)'.dependencies]
+dxgcap = "0.2.4"
